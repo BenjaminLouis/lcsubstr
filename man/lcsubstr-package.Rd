@@ -4,12 +4,21 @@
 \name{lcsubstr-package}
 \alias{lcsubstr}
 \alias{lcsubstr-package}
-\title{lcsubstr: What the Package Does (One Line, Title Case)}
+\title{lcsubstr: Find the longest common substring between elements of a character vector}
 \description{
-What the package does (one paragraph).
+This package contains only one function which find the longest
+common substring between elements of a character vector.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/BenjaminLouis/lcsubstr/}
+  \item Report bugs at \url{https://github.com/BenjaminLouis/lcsubstr/issues/}
+}
+
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com}
+\strong{Maintainer}: Benjamin Louis \email{benjaminlouis.pro@gmail.com}
 
 }
 \keyword{internal}
