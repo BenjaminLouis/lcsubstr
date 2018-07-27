@@ -3,13 +3,14 @@
 #' @param string a character vector.
 #' @param n_min integer. Minimum common substring length to find.
 #' @param n_max integer. Maximum common substring length to find. Default (\code{NULL}) correspond to the length of the smallest string
+#' @param trace logical. Should the result be printed in the console ?
 #'
 #' @return a character vector with the longest common substring(s)
 #' 
 #' @importFrom tibble tibble
 #' @importFrom stringr str_c str_detect str_length coll
 #' @importFrom dplyr mutate top_n desc pull filter select
-#' @importFrom rlang is_null
+#' @importFrom rlang is_null is_true
 #' @importFrom tidytext unnest_tokens
 #' @importFrom purrr map map_lgl
 #' 
@@ -20,7 +21,7 @@
 #' st2 <- "Here a second string for the example too."
 #' st3 <- "Here is a third  string for the example, as original as the others."
 #' find_lcsubstr(string = c(st1, st2, st3))
-find_lcsubstr <- function(string, n_min = 1, n_max = NULL) {
+find_lcsubstr <- function(string, n_min = 1, n_max = NULL, trace = TRUE) {
   
  # tibble
   tibtext <- tibble(strid = str_c("st", seq_along(string)),
@@ -49,7 +50,7 @@ find_lcsubstr <- function(string, n_min = 1, n_max = NULL) {
     top_n(n = 1, wt = nchr) %>%
     pull(chr)
   
-  cat("\nLongest Common SubString(s) :\n ", str_c(lcsubstr, collapse = "\n"), "\n\n")
+  if (is_true(trace)) cat("\nLongest Common SubString(s) :\n ", str_c(lcsubstr, collapse = "\n"), "\n\n")
   
   return(lcsubstr)
   

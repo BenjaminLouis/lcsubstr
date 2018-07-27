@@ -4,7 +4,7 @@
 \alias{find_lcsubstr}
 \title{Find the longest common substring between elements of a character vector}
 \usage{
-find_lcsubstr(string, n_min = 1, n_max = NULL)
+find_lcsubstr(string, n_min = 1, n_max = NULL, trace = TRUE)
 }
 \arguments{
 \item{string}{a character vector.}
@@ -12,6 +12,8 @@ find_lcsubstr(string, n_min = 1, n_max = NULL)
 \item{n_min}{integer. Minimum common substring length to find.}
 
 \item{n_max}{integer. Maximum common substring length to find. Default (\code{NULL}) correspond to the length of the smallest string}
+
+\item{trace}{logical. Should the result be printed in the console ?}
 }
 \value{
 a character vector with the longest common substring(s)
