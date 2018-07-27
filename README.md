@@ -1,9 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-lcsubstr
-========
+Package {lcsubstr}
+==================
 
-The goal of lcsubstr is to provide a function that find the longest common substring between elements of a charcater vector
+The goal of {lcsubstr} is to provide a function that find the longest common substring between elements of a charcater vector
 
 Installation
 ------------
