@@ -43,13 +43,13 @@ find_lcsubstr <- function(string, n_min = 1, n_max = NULL) {
                   drop = FALSE, lowercase = FALSE, strip_non_alphanum = FALSE, to_lower = FALSE) %>%
     mutate(nchr = str_length(chr)) %>%
     select(-string, -strid) %>%
-    mutate(isIn = map(chr, ~str_detect(pattern = coll(.), string = tibtext$str))) %>%
+    mutate(isIn = map(chr, ~str_detect(pattern = coll(.), string = pull(tibtext, string)))) %>%
     mutate(isAllIn = map_lgl(isIn, all)) %>%
     filter(isAllIn) %>%
     top_n(n = 1, wt = nchr) %>%
     pull(chr)
   
-  cat("\nLongest Common SubString(s) :\n", str_c(lcsubstr, collapse = "\n"), "\n\n")
+  cat("\nLongest Common SubString(s) :\n ", str_c(lcsubstr, collapse = "\n"), "\n\n")
   
   return(lcsubstr)
   
