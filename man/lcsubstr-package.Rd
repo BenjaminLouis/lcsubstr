@@ -6,8 +6,8 @@
 \alias{lcsubstr-package}
 \title{lcsubstr: Find the longest common substring between elements of a character vector}
 \description{
-This package contains only one function which find the longest
-common substring between elements of a character vector.
+This package contains only one function which find the longest 
+    common substring between elements of a character vector.
 }
 \seealso{
 Useful links:
